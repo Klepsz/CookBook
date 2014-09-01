@@ -1,0 +1,44 @@
+<%= form_for(@recipe) do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :ingredients %>
+    <%= f.text_area :ingredients %>
+  </div>
+
+  <div>
+    <%= f.label :servings %>
+    <%= f.number_field :servings %>
+  </div>
+
+  <div>
+    <%= f.label :vegan %>
+    <%= f.check_box :vegan %>
+  </div>
+
+  <div>
+    <%= f.label :directions %>
+    <%= f.text_area :directions %>  
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+
+
+
+<% end %>
+
+
+<!--     t.string   "name"
+    t.text     "ingredients"
+    t.text     "description"
+    t.text     "directions"
+    t.integer  "servings"
+    t.integer  "user_id"
+    t.boolean  "vegan"
+    t.datetime "created_at"
+    t.datetime "updated_at -->
