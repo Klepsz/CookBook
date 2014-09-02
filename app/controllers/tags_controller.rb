@@ -1,5 +1,7 @@
 class TagsController < ApplicationController
 
+  ActsAsTaggableOn.remove_unused_tags = true
+
   before_action :set_tag, only: [:show]
 
   def show
