@@ -40,8 +40,15 @@
       </ul>
     </div>
     <div class = "col-sm-4">
+      <h2>Tags:</h2>
+      <ul class = "list-unstyled">
+        <% @tags.all.each do |tag| %>
+          <li>
+            <%= link_to tag.name, tag_path(tag), class: 'label label-primary'  %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
-
 

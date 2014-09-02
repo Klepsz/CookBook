@@ -4,6 +4,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipe = Recipe.all
+    @tags = ActsAsTaggableOn::Tag.all
   end
 
   def show
