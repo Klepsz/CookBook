@@ -39,3 +39,4 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 gem 'bootstrap-sass'
 gem 'acts-as-taggable-on'
+gem "select2-rails"
