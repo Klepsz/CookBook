@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
 
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :set_tags_for_select, only: [:new, :create]
 
   def index
     @recipe = Recipe.all
@@ -41,13 +42,17 @@ class RecipesController < ApplicationController
 
   private
 
+    def set_tags_for_select
+      @tags = ActsAsTaggableOn::Tag.all.map(&:name).to_json
+    end
+
     def set_recipe
       @recipe = Recipe.find(params[:id])
     end
 
     def recipe_params
       params.require(:recipe).permit(:name, :ingredients, :description, :directions,
-                                     :servings, :user_id, :vegan)
+                                     :servings, :user_id, :vegan, :tag_list)
     end
 
 end
