@@ -10,6 +10,7 @@ Unit.delete_all
 Ingredient.delete_all
 Recipe.delete_all
 IngredientForRecipe.delete_all
+ActsAsTaggableOn::Tag.delete_all
 
 l = Unit.create!(name: "l")
 cup = Unit.create!(name: "cup")
