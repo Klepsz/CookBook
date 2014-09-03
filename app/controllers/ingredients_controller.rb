@@ -16,17 +16,17 @@ class IngredientsController < ApplicationController
   end
 
   def create
-    @ingredient = Ingredient.new(recipe_params)
+    @ingredient = Ingredient.new(ingredient_params)
       if @ingredient.save
-        redirect_to @ingredient
+        redirect_to ingredients_path
       else
         render 'new'
       end
   end
 
   def update
-    if @ingredient.update(recipe_params)
-      redirect_to @ingredient
+    if @ingredient.update(ingredient_params)
+      redirect_to ingredients_path
     else
       render 'edit'
     end
