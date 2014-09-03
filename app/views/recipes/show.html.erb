@@ -1,7 +1,31 @@
-<p>
-  <strong>Recipe name: </strong>
-  <%= @recipe.name %>
-</p>
+<div class="container">
+  <strong><%= @recipe.name %></strong>
+
+  <div class="col-sm-12">
+    <div class="col-sm-5">
+      Picture
+    </div>
+    <div class="col-sm-7">
+      <strong> Ingredients: </strong>
+      <ul>
+        <% @recipe.ingredients.each do |ingredient| %>
+          <li><%= ingredient.name %> </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-sm-12">
+    <div class="col-sm-5">
+      <strong> Description: </strong>
+      <%= @recipe.description %>
+    </div>
+    <div class="col-sm-7">
+      <strong> Directions: </strong>
+      <%= @recipe.directions %>
+    </div>
+  </div>
+</div>
 
 <p>
   <strong>Servings: </strong>
@@ -13,12 +37,10 @@
   <%= @recipe.vegan %>
 </p>
 
-<p>
-  <strong>Directions: </strong>
-  <%= @recipe.directions %>
-</p>
-
-<%= link_to "Add Ingredients", new_recipe_ingredient_for_recipe_path(@recipe) %>
+<%= link_to "Add Ingredients", new_recipe_ingredient_for_recipe_path(@recipe), class: "btn btn-default" %>
+<%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-default" %>
+<%= link_to "Delete", @recipe, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+<%= link_to "Go Home", root_path, class: "btn btn-default" %>
 
 
 
