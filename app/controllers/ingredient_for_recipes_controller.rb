@@ -24,7 +24,7 @@ class IngredientForRecipesController < ApplicationController
 
   def update
     if @ingredient_for_recipe.update(ingredient_for_recipe_params)
-      redirect_to @ingredient_for_recipe
+      redirect_to recipe_ingredient_for_recipes_path(@recipe)
     else
       render 'edit'
     end
@@ -32,7 +32,7 @@ class IngredientForRecipesController < ApplicationController
 
   def destroy
     @ingredient_for_recipe.destroy
-    redirect_to ingredient_for_recipes_path
+    redirect_to recipe_ingredient_for_recipes_path(@recipe)
   end
 
   private

@@ -1,4 +1,4 @@
-<h1> Jeszcze tutaj będę </h1>
+<h1> <%= "#{@recipe.name} ingredients" %> </h1>
 
 
 <div class="table-responsive">
@@ -18,10 +18,11 @@
         <td><%= item.ingredient.name %></td>
         <td><%= item.amount %></td>
         <td><%= item.unit.name %></td>
-        <td><%= link_to "Edit", edit_recipe_ingredient_for_recipes_path(@recipe) %></td>
-
+        <td><%= link_to "Edit", edit_recipe_ingredient_for_recipe_path(@recipe, item)%></td>
+        <td><%= link_to "Delete", [@recipe, item], method: :delete %></td>
        </tr>
       <% end %>
       </tbody>
   </table>
 </div>
+<%= link_to "Add more ingredients", new_recipe_ingredient_for_recipe_path(@recipe), class: "btn btn-default" %>

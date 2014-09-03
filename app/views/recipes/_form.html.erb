@@ -1,15 +1,12 @@
 <%= hidden_field_tag 'tag_list', @tags, id: 'tag_list' %>
-<div class='col-sm-2'></div>
-<div class='col-sm-6'>
+
 <%= simple_form_for(@recipe, html: {class: "form-horizontal"}) do |f| %>
   <%= f.input :name %>
-
   <%= f.input :description %>
   <%= f.input :servings, label: "Servings:" %>
   <%= f.input :vegan, label: "Vegan?" %>
   <%= f.input :directions %>
-  <%= f.input :tag_list %>
+  <%= f.input :tag_list, placeholder: "       " %>
   <%= f.button :submit %>
 <% end %>
-</div>
 
