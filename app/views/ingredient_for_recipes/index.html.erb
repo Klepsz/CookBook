@@ -1,0 +1,27 @@
+<h1> Jeszcze tutaj będę </h1>
+
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+         <th>Ingredient</th>
+         <th>Amount</th>
+         <th>Unit</th>
+         <th>Edit</th>
+         <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @ingredient_for_recipe.each do |item| %>
+       <tr>
+        <td><%= item.ingredient.name %></td>
+        <td><%= item.amount %></td>
+        <td><%= item.unit.name %></td>
+        <td><%= link_to "Edit", edit_recipe_ingredient_for_recipes_path(@recipe) %></td>
+
+       </tr>
+      <% end %>
+      </tbody>
+  </table>
+</div>

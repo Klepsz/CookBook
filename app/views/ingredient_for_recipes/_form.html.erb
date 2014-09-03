@@ -1,0 +1,9 @@
+<div class = "col-sm-2"></div>
+<div class = "col-sm-6">
+  <%= simple_form_for([@recipe, @ingredient_for_recipe], html: {class: "form-horizontal"}) do |f| %>
+    <%= f.input :amount %>
+    <%= f.association :ingredient %>
+    <%= f.association :unit %>
+    <%= f.submit %>
+  <% end %>
+</div>

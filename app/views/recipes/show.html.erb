@@ -4,11 +4,6 @@
 </p>
 
 <p>
-  <strong>Ingredients: </strong>
-  <%= @recipe.ingredients %>
-</p>
-
-<p>
   <strong>Servings: </strong>
   <%= @recipe.servings %>
 </p>
@@ -22,6 +17,8 @@
   <strong>Directions: </strong>
   <%= @recipe.directions %>
 </p>
+
+<%= link_to "Add Ingredients", new_recipe_ingredient_for_recipe_path(@recipe) %>
 
 
 

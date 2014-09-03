@@ -1,12 +1,9 @@
 class IngredientForRecipesController < ApplicationController
-
+  before_action :set_recipe
   before_action :set_ingredient_for_recipe, only: [:show, :edit, :update, :destroy]
 
   def index
     @ingredient_for_recipe = @recipe.ingredient_for_recipes.all
-  end
-
-  def show
   end
 
   def new
@@ -19,7 +16,7 @@ class IngredientForRecipesController < ApplicationController
   def create
     @ingredient_for_recipe = @recipe.ingredient_for_recipes.new(ingredient_for_recipe_params)
       if @ingredient_for_recipe.save
-        redirect_to @ingredient_for_recipe
+        redirect_to recipe_ingredient_for_recipes_path(@recipe)
       else
         render 'new'
       end
@@ -54,5 +51,3 @@ class IngredientForRecipesController < ApplicationController
 
 end
 
-
-end
