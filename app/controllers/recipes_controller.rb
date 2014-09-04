@@ -4,8 +4,17 @@ class RecipesController < ApplicationController
   before_action :set_tags_for_select, only: [:new, :create]
 
   def index
-    @recipe = Recipe.tagged_or_all(params[:tag])
+    if params[:search]
+      @recipe = Recipe.where(["name LIKE ? OR description LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%"])
+    else 
+      @recipe = Recipe.tagged_or_all(params[:tag])
+      
+    end
     @tags = ActsAsTaggableOn::Tag.all
+  end
+
+  def search
+    render :text => @recipe.map(&:name).join(",")
   end
 
   def show

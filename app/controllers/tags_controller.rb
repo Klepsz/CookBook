@@ -7,9 +7,7 @@ class TagsController < ApplicationController
   def show
   end
 
-
-
-  private
+private
     def set_tag
       @tag = ActsAsTaggableOn::Tag.find(params[:id])
     end
