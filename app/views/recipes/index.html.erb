@@ -49,7 +49,7 @@
       <ul class = "list-unstyled">
         <% @tags.all.each do |tag| %>
           <li>
-            <%= link_to tag.name, tag_path(tag), class: 'label label-primary'  %>
+            <%= link_to tag.name, recipes_path(:tag => tag.name), class: 'label label-primary'  %>
           </li>
         <% end %>
       </ul>

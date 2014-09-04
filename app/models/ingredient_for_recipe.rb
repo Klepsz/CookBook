@@ -5,5 +5,5 @@ class IngredientForRecipe < ActiveRecord::Base
 
   validates :amount, presence: true
   validates :amount, presence: true, numericality: { greater_than: 0, less_than:1000 }
-  validates :ingredient_id, uniqueness: true
+  validates :ingredient_id, uniqueness:  { scope: :recipe_id }
 end

@@ -9,6 +9,7 @@ class IngredientsController < ApplicationController
   end
 
   def new
+    session['back_to'] = request.referer
     @ingredient = Ingredient.new
   end
 
@@ -18,7 +19,9 @@ class IngredientsController < ApplicationController
   def create
     @ingredient = Ingredient.new(ingredient_params)
       if @ingredient.save
-        redirect_to ingredients_path
+        r = session['back_to']
+        session.delete('back_to')
+        redirect_to r || ingredients_path
       else
         render 'new'
       end

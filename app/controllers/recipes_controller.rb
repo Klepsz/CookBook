@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   before_action :set_tags_for_select, only: [:new, :create]
 
   def index
-    @recipe = Recipe.all
+    @recipe = Recipe.tagged_or_all(params[:tag])
     @tags = ActsAsTaggableOn::Tag.all
   end
 
