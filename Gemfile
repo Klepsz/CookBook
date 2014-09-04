@@ -41,4 +41,4 @@ gem 'bootstrap-sass'
 gem 'acts-as-taggable-on'
 gem "select2-rails"
 gem 'simple_form'
-
+gem "paperclip", "~> 4.2"
