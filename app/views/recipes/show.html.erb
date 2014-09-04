@@ -1,5 +1,5 @@
 <div class="container">
-  <strong><%= @recipe.name %></strong>
+  <h1><%= @recipe.name %></h1>
 
   <div class="col-sm-12">
     <div class="col-sm-5">
@@ -8,8 +8,8 @@
     <div class="col-sm-7">
       <strong> Ingredients: </strong>
       <ul>
-        <% @recipe.ingredients.each do |ingredient| %>
-          <li><%= ingredient.name %> </li>
+        <% @recipe.ingredient_for_recipes.each do |ingredient| %>
+          <li><%= show_ingredient(ingredient) %></li>
         <% end %>
       </ul>
     </div>
