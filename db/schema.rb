@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902183003) do
+ActiveRecord::Schema.define(version: 20140904184337) do
 
   create_table "ingredient_for_recipes", force: true do |t|
     t.integer  "ingredient_id"
@@ -37,6 +37,10 @@ ActiveRecord::Schema.define(version: 20140902183003) do
     t.boolean  "vegan"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   create_table "taggings", force: true do |t|

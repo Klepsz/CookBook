@@ -1,9 +1,11 @@
 <div class="container">
-  <h1><%= @recipe.name %></h1>
+  <div class="col-sm-12">
+    <h1><%= @recipe.name %></h1>
+  </div>
 
   <div class="col-sm-12">
     <div class="col-sm-5">
-      Picture
+      <%= image_tag @recipe.picture.url(:medium) %>
     </div>
     <div class="col-sm-7">
       <strong> Ingredients: </strong>
@@ -27,6 +29,7 @@
   </div>
 </div>
 
+<div class="col-sm-12"> 
 <p>
   <strong>Servings: </strong>
   <%= @recipe.servings %>
@@ -41,6 +44,7 @@
 <%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-default" %>
 <%= link_to "Delete", @recipe, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
 <%= link_to "Go Home", root_path, class: "btn btn-default" %>
+</div>
 
 
 

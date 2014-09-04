@@ -30,7 +30,7 @@
         <% @recipe.each do |recipe| %>
           <li class = "recipe">
             <div class = "col-sm-3">
-              Picture
+              <%= image_tag recipe.picture.url(:thumb) %>
             </div>
             <div class = "col-sm-9">
               <h4><%= link_to recipe.name, recipe %></h4>
