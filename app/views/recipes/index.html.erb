@@ -40,7 +40,7 @@
               <p class="text-muted">Posted by ... </p>
               <div>
                 <% recipe.tags.each do |tag| %>
-                  <%= link_to tag.name, tag_path(tag), class: 'label label-primary' %>
+                  <%= link_to tag.name, recipes_path(:tag => tag.name), class: 'label label-primary' %>
                 <% end %>
               </div>
             </div>

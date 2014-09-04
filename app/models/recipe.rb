@@ -11,6 +11,7 @@ class Recipe < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true, length: { maximum: 80 }
   validates :description, presence: true
   validates :directions, presence: true
+  validates_attachment :picture, size: { :in => 0..1.megabytes }
 
   def self.tagged_or_all(tag=nil)
     recipes = tagged_with tag

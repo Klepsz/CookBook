@@ -8,7 +8,6 @@ class RecipesController < ApplicationController
       @recipe = Recipe.where(["name LIKE ? OR description LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%"])
     else 
       @recipe = Recipe.tagged_or_all(params[:tag])
-      
     end
     @tags = ActsAsTaggableOn::Tag.all
   end
