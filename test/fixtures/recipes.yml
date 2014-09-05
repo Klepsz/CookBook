@@ -1,17 +1,17 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  description: MyText
-  directions: MyText
-  servings: 1
-  user_id: 1
-  vegan: false
+# one:
+#   name: MyString
+#   description: MyText
+#   directions: MyText
+#   servings: 1
+#   user_id: 1
+#   vegan: false
 
-two:
-  name: MyString
-  description: MyText
-  directions: MyText
-  servings: 1
-  user_id: 1
-  vegan: false
+# two:
+#   name: MyString
+#   description: MyText
+#   directions: MyText
+#   servings: 1
+#   user_id: 1
+#   vegan: false
