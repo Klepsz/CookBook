@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
 
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
   before_action :set_tags_for_select, only: [:new, :create]
+  before_filter :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   def index
     if params[:search]
