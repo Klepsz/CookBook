@@ -36,10 +36,11 @@ gem 'spring',        group: :development
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
- gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 gem 'bootstrap-sass'
 gem 'acts-as-taggable-on'
 gem "select2-rails"
 gem 'simple_form'
 gem "paperclip", "~> 4.2"
 gem 'devise'
+gem "omniauth-google-oauth2"
