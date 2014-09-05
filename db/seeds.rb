@@ -11,6 +11,9 @@ Ingredient.delete_all
 Recipe.delete_all
 IngredientForRecipe.delete_all
 ActsAsTaggableOn::Tag.delete_all
+User.delete_all
+
+user = User.create!(email: "jan@example.com", password: "test1234", password_confirmation: "test1234" )
 
 l = Unit.create!(name: "l")
 cup = Unit.create!(name: "cup")
@@ -42,17 +45,17 @@ directions = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin ni
              viverra nisi, in interdum massa nibh nec erat."
 
 pizza = Recipe.create!(name: "Pizza", description: "Very very tasty", directions: directions,
-                      servings: 4, vegan: false )
+                      servings: 4, vegan: false, user_id: user.id )
 pasta = Recipe.create!(name: "Pasta", description: "Very very very tasty", directions: directions,
-                      servings: 4, vegan: true )
+                      servings: 4, vegan: true , user_id: user.id)
 leczo = Recipe.create!(name: "Leczo", description: "Dish from hungary. Autumn star", directions: directions,
-                      servings: 8, vegan: true )
+                      servings: 8, vegan: true , user_id: user.id)
 chickpea_curry = Recipe.create!(name: "Chickpea curry", description: "Is ok", directions: directions,
-                      servings: 4, vegan: true )
+                      servings: 4, vegan: true , user_id: user.id)
 sandwich = Recipe.create!(name: "Sandwich", description: "Dish? huh?", directions: directions,
-                      servings: 1, vegan: true )
+                      servings: 1, vegan: true , user_id: user.id)
 tortilla = Recipe.create!(name: "Tortilla", description: "Fast, cheap, good", directions: directions,
-                      servings: 4, vegan: false )
+                      servings: 4, vegan: false, user_id: user.id )
 pizza.tag_list.add "Extra delicious"
 pizza.save
 pasta.tag_list.add "Classic"

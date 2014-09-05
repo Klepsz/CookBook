@@ -1,0 +1,8 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#user_email, #user_password, #user_password_confirmation {
+  margin-bottom: 10px;
+  width: 80%;
+  @extend .form-control;
+}

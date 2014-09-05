@@ -37,7 +37,7 @@
               <div>
                 <p><%= recipe.description %></p>
               </div>
-              <p class="text-muted">Posted by ... </p>
+              <p class="text-muted">Posted by <%= recipe.user.email %> </p>
               <div>
                 <% recipe.tags.each do |tag| %>
                   <%= link_to tag.name, recipes_path(:tag => tag.name), class: 'label label-primary' %>
