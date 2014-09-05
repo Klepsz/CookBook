@@ -7,6 +7,7 @@ class Recipe < ActiveRecord::Base
 
   has_many :ingredient_for_recipes, dependent: :destroy
   has_many :ingredients, through: :ingredient_for_recipes
+  belongs_to :user
 
   validates :name, presence: true, uniqueness: true, length: { maximum: 80 }
   validates :description, presence: true
